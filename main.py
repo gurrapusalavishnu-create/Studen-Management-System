@@ -1,21 +1,27 @@
-class car:
-    def __init__(self,model,brand,year):
-        self.model = model
-        self.brand = brand
-        self.year = year
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
 
     def display(self):
-        print("model:", self.model)
-        print("brand:", self.brand)
-        print("year:", self.year)
+        print("Name:", self.name)
+        print("Marks:", self.marks)
         print("------")
-model1= input("enter model: ")
-brand1 =input("enter brand: ")
-year1 =int(input("enter year number: "))
-model12= input("enter model: ")
-brand12 = input("enter brand: ")
-year12 = int(input("enter year number: "))
-s1 = car(model1,year1,brand1)
-s2 = car(model12,year12,brand12)
-s1.display()
-s2.display()
+
+
+students = []
+
+n = int(input("Enter number of students: "))
+
+for i in range(n):
+    print("\nEnter details for student", i + 1)
+
+    name = input("Enter name: ")
+    marks = int(input("Enter marks: "))
+
+    s = Student(name, marks)
+    students.append(s)
+
+print("\nStudent Details:")
+for s in students:
+    s.display()
